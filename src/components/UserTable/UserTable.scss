@@ -1,0 +1,30 @@
+.iconBtnWrapper {
+    .deleteBtn {
+        color: #ef4444;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: none;
+    }
+
+    .deleteBtn:where(.css-dev-only-do-not-override-1m62vyb).ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
+        color: #b91c1c;
+        background-color: transparent;
+    }
+
+    .editBtn {
+        color: #ca8a04;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: none;
+    }
+
+    .editBtn:where(.css-dev-only-do-not-override-1m62vyb).ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
+        color: #854d0e;
+        background-color: transparent;
+    }
+
+}

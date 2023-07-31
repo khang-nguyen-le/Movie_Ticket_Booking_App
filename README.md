@@ -16,3 +16,6 @@ Các thư viện cần cài đặt:
 - antd
 - tailwindcss
 - sass, sass-loader
+
+Link truy cập swagger lấy API:
+https://movienew.cybersoft.edu.vn/swagger/index.html

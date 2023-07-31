@@ -1,0 +1,12 @@
+.deleteBtnWrapper .deleteBtn {
+  background-color: transparent;
+  color: #ef4444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+}
+.deleteBtnWrapper .deleteBtn:hover {
+  /* background-color: #b91c1c !important; */
+  background-color: transparent;
+}/*# sourceMappingURL=UserTable.css.map */

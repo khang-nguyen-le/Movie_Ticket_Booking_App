@@ -1,0 +1,12 @@
+.details-filter {
+    &__selector:where(.css-dev-only-do-not-override-1m62vyb).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+        background-color: transparent;
+        color: white;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+
+    &__selector:where(.css-dev-only-do-not-override-1m62vyb).ant-select .ant-select-arrow {
+        color: white;
+    }
+}
