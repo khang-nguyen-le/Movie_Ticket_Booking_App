@@ -166,6 +166,7 @@ const FormSignup = () => {
           <input
             type="tel"
             name="soDt"
+            id="tel"
             className="border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-transparent"
             onChange={handleChange}
             onBlur={handleBlur}

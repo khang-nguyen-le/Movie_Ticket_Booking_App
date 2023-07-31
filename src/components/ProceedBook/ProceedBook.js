@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./ProceedBook.scss";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ticketServ } from "../../services/ticketServices";
 import { message } from "antd";
 
@@ -10,8 +10,8 @@ const ProceedBook = () => {
   const { seatList } = useSelector((state) => state.ticket);
   const { scheduleId } = useParams();
   const [messageApi, contextHolder] = message.useMessage();
-
   const [totalPrice, setTotalPrice] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (ticketList.length > 0) {
@@ -38,6 +38,10 @@ const ProceedBook = () => {
             type: "success",
             content: "Đặt vé thành công",
           });
+
+          setTimeout(() => {
+            navigate("/");
+          }, 1000);
         })
         .catch((err) => {
           console.log(err);

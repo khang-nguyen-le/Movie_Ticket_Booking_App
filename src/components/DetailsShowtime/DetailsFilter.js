@@ -22,9 +22,9 @@ const DetailsFilter = (props) => {
     if (theaterSystem) {
       dispatch(setDefaultTheater(theaterSystem[0]));
 
-      setCinemaLogo(theaterSystem[0].logo);
+      setCinemaLogo(theaterSystem?.length > 0 && theaterSystem[0].logo);
 
-      setTheaterName(theaterSystem[0].maHeThongRap);
+      setTheaterName(theaterSystem?.length > 0 && theaterSystem[0].maHeThongRap);
 
       setTheaters(
         theaterSystem.map((theater) => {

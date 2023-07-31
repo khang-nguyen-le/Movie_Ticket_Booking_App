@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { setLoading } from "../../redux/slices/loadingSlice";
 
 const MovieDetailsPage = () => {
-  const [movie, setMovie] = useState({})
+  const [movie, setMovie] = useState()
   const { movieId } = useParams();
   const dispatch = useDispatch()
 
@@ -15,25 +15,27 @@ const MovieDetailsPage = () => {
     dispatch(setLoading())
     movieServ.getMovieDetails(movieId)
       .then((res) => {
+        console.log(res)
         setMovie(res.data.content)
         dispatch(setLoading())
       })
       .catch(err => {
         console.log(err)
         dispatch(setLoading())
+        return
       })
   }, [movieId])
 
   return (
     <div className="bg-gray-950 text-white">
       <DetailsBanner
-        movieThumb={movie.hinhAnh}
-        trailer={movie.trailer}
-        movieName={movie.tenPhim}
-        synopsis={movie.moTa}
-        premiere={movie.ngayKhoiChieu}
+        movieThumb={movie && movie.hinhAnh}
+        trailer={movie && movie.trailer}
+        movieName={movie && movie.tenPhim}
+        synopsis={movie && movie.moTa}
+        premiere={movie && movie.ngayKhoiChieu}
       />
-      <DetailsShowtime theaterSystem={movie.heThongRapChieu} />
+      <DetailsShowtime theaterSystem={movie && movie.heThongRapChieu.length > 0 && movie.heThongRapChieu} />
     </div>
   );
 

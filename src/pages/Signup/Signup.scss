@@ -2,8 +2,21 @@
     background-image: url(./../../assets//images/account-bg.jpg);
     background-size: cover;
     background-position: center center;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(24, 33, 47, 0.714);
+    }
 
     &__form {
+        position: relative;
+        z-index: 1;
         background-color: rgba(68, 90, 153, 0.051);
         box-shadow: 0px 0px 29.4px 0.6px rgba(0, 0, 0, 0.5);
     }
