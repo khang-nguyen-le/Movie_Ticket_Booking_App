@@ -1,0 +1,33 @@
+.seat {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        display: inline-block;
+        background-image: url(./../../assets/images/seat.png);
+        width: 42px;
+        height: 39px;
+        cursor: pointer;
+    }
+
+    &:checked::before {
+        background-image: url(./../../assets/images/selected-seat.png);
+    }
+
+    &:disabled::before {
+        background-image: url(./../../assets/images/booked-seat.png);
+    }
+
+    &-label {
+        position: absolute;
+        z-index: 10;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+
+    }
+}

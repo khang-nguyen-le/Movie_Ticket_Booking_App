@@ -1,0 +1,10 @@
+.signup {
+    background-image: url(./../../assets//images/account-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+
+    &__form {
+        background-color: rgba(68, 90, 153, 0.051);
+        box-shadow: 0px 0px 29.4px 0.6px rgba(0, 0, 0, 0.5);
+    }
+}

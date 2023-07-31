@@ -1,0 +1,42 @@
+import React, { useEffect, useState } from "react";
+import DetailsBanner from "../../components/DetailsBanner/DetailsBanner";
+import DetailsShowtime from "../../components/DetailsShowtime/DetailsShowtime";
+import { useParams } from "react-router-dom";
+import { movieServ } from "../../services/movieServices";
+import { useDispatch } from "react-redux";
+import { setLoading } from "../../redux/slices/loadingSlice";
+
+const MovieDetailsPage = () => {
+  const [movie, setMovie] = useState({})
+  const { movieId } = useParams();
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(setLoading())
+    movieServ.getMovieDetails(movieId)
+      .then((res) => {
+        setMovie(res.data.content)
+        dispatch(setLoading())
+      })
+      .catch(err => {
+        console.log(err)
+        dispatch(setLoading())
+      })
+  }, [movieId])
+
+  return (
+    <div className="bg-gray-950 text-white">
+      <DetailsBanner
+        movieThumb={movie.hinhAnh}
+        trailer={movie.trailer}
+        movieName={movie.tenPhim}
+        synopsis={movie.moTa}
+        premiere={movie.ngayKhoiChieu}
+      />
+      <DetailsShowtime theaterSystem={movie.heThongRapChieu} />
+    </div>
+  );
+
+};
+
+export default MovieDetailsPage;

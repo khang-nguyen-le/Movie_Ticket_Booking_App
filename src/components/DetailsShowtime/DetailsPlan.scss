@@ -1,0 +1,20 @@
+.details-plan {
+    &__theater-item:not(:last-child) {
+        border-bottom: 1px solid #6b7280;
+    }
+
+    &__schedule-item {
+        mask-image: url(./../../assets/images/showtime.png);
+        mask-position: center;
+        background-color: #0369a1;
+        width: 70px;
+        height: fit-content;
+        padding: 7px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    &__schedule-item:hover {
+        background-color: #0ea5e9;
+    }
+}
