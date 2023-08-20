@@ -12,7 +12,7 @@ const UserTemplate = () => {
     <Spin spinning={loading}>
       <Header />
       <Outlet />
-      {/* <Footer /> */}
+      <Footer />
     </Spin>
   );
 };
