@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./DetailsBanner.scss";
 
 const DetailsBanner = (props) => {
-  // console.log(props);
   const { movieThumb, trailer, movieName, synopsis, premiere } = props;
   console.log(premiere)
+
   return (
     <>
       <section
@@ -15,12 +15,9 @@ const DetailsBanner = (props) => {
           <div className="details-banner__wrapper flex text-white gap-6 ">
             <div className="details-banner__thumb w-1/5 rounded-lg border border-gray-600 overflow-hidden">
               <img src={movieThumb} alt="Movie Thumbnail" className="h-full w-auto" />
-              <a href="#video" className="play-video details-banner__trailer">
+              <a href={trailer} className="play-video details-banner__trailer" target="_blank">
                 <i class="fa-regular fa-circle-play"></i>
               </a>
-              <div id="video" className="video-popup mfp-hide" >
-                <iframe src={trailer} allowFullScreen />
-              </div>
 
             </div>
             <div className="details-banner__content w-4/5 h-80">

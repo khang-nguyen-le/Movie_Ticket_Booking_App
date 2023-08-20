@@ -4,7 +4,7 @@ import { movieServ } from "../../services/movieServices"
 export const getMovieDetailsThunk = createAsyncThunk('movie/getMovieDetailsThunk', async (movieId) => {
     const res = await movieServ.getMovieDetails(movieId)
 
-    console.log(res)
+    return res
 })
 
 const initialState = {
